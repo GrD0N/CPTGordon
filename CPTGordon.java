@@ -8,30 +8,23 @@ public class CPTGordon{
 		Console con = new Console("CPTGordon", 1280, 720);
 		int intKey = 0;
 		
+		con.setDrawColor(new Color(0,0,0));		
+		
 		BufferedImage imgStartScreen = con.loadImage("Connect4.jpg");
 		con.drawImage(imgStartScreen, 0, 0);
+		
 		
 		con.drawString("(p) --> Play Game", 950, 350);
 		con.drawString("(h) --> View High Scores", 950, 400);
 		con.drawString("(r) --> View Replay", 950, 450);
+
 		con.repaint();
 		
-		/* while(intKey != 112){
+		while(intKey != 112 && intKey != 104 && intKey != 114){
 			intKey = con.getChar();
 		}
 		Player1(con);
-		while(intKey != 104){
-			intKey = con.getChar();
-		}
-		Player1(con);
-		while(intKey != 114){
-			intKey = con.getChar();
-		}
-		Player1(con);*/
 		
-		if(intKey == 112){
-			con.println("Hi");
-		}
 	}
 	
 	public static void Player1(Console con){ // Input Player Names
@@ -64,5 +57,10 @@ public class CPTGordon{
 		int intBoard[][];
 		int intRow = 1;
 		int intColumn;
+		con.println("Player 1's Turn - Enter Column Number");
+		intColumn = con.readInt();
+		
+		intBoard = new int[intRow][intColumn];
+		
 	}
 }
