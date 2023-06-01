@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 
 public class CPTGordon{
-	public static void main(String [] args){
+	public static void main(String [] args){ // Main Screen
 		Console con = new Console("CPTGordon", 1280, 720);
 		char charStart = ' ';
 		
@@ -30,25 +30,28 @@ public class CPTGordon{
 		
 	}
 	
-	public static void Player1(Console con){ // Input Player Names
+	public static void Player1(Console con){ // Player Name Setup Screen
 		String strPlayer1 = "";
 		String strPlayer2 = "";
 		BufferedImage imgNameScreen = con.loadImage("BlueScreen.jpg");
 		con.drawImage(imgNameScreen, 0, 0);
 		con.repaint();
 		con.setDrawColor(Color.WHITE);	
+		TextOutputFile txtName = new TextOutputFile("PlayerName.txt",false);
+		con.drawRect(585,0,128,28);
 		
-		con.drawRect(251,0,240,28);
-		
-		con.print("Enter Player 1 Name: ");
+		con.print("Enter Player 1 Name (NO LONGER THAN 10 LETTERS): ");
 		strPlayer1 = con.readLine();
+		txtName.println(strPlayer1);
+		con.drawRect(585,25,128,28);
 		
-		con.drawRect(251,25,240,28);
-		
-		con.print("Enter Player 2 Name: ");
+		con.print("Enter Player 2 Name (NO LONGER THAN 10 LETTERS): ");
 		strPlayer2 = con.readLine();
+		txtName.println(strPlayer2);
+		txtName.close();
 		con.clear();
 		con.repaint();
+		
 		RecordChoice(con);
 		
 	}
@@ -59,7 +62,7 @@ public class CPTGordon{
 		//TextInputFile txtLeaderboard = new TextInputFile 
 	}
 	public static void RecordChoice(Console con){
-		char charChoice;
+		char charRecord;
 		con.clear();
 		
 		BufferedImage imgGameScreen = con.loadImage("BlueScreen.jpg");
@@ -69,38 +72,59 @@ public class CPTGordon{
 		con.drawString("Would you like to record this Game?", 445,250);
 		con.drawString("(y) --> Yes, Record the current Game", 431, 275);
 		con.drawString("(n) --> No, don't record the current game", 420,300);
-		charChoice = con.getChar();
-		if(charChoice == 'y'){
+		charRecord = con.getChar();
+		if(charRecord == 'y'){
 			GameBoardYes(con);
-		}else if(charChoice == 'n'){
+		}else if(charRecord == 'n'){
 			GameBoardNo(con);
 		}
 	}
 	
 	public static void GameBoardYes(Console con){
+		String strPlayer1;
+		String strPlayer2;
 		int intBoard[][];
 		int intRow = 1;
-		int intColumn;
+		char charColumn;
+		con.clear();
+		TextInputFile txtName = new TextInputFile("PlayerName.txt");
 		
+		BufferedImage imgBoardScreen = con.loadImage("BlueScreen.jpg");
+		con.drawImage(imgBoardScreen, 0, 0);
 		con.repaint();
-		BufferedImage imgGameScreen = con.loadImage("BlueScreen.jpg");
-		con.drawImage(imgGameScreen, 0, 0);
-
-		con.print("Player 1's Turn - Enter Column Number");
-		intColumn = con.readInt();
-		intBoard = new int[intRow][intColumn];
-		con.print("Player 2's Turn - Enter Column Number");
+		
+		con.setDrawColor(Color.WHITE);	
+		
+		strPlayer1 = txtName.readLine();
+		strPlayer2 = txtName.readLine();
+		con.drawString("Player 1: " +strPlayer1,0,0);
+		con.drawString(strPlayer1 +"'s Turn - Enter Column Number", 0,23);;
+		con.drawString("Player 2: " +strPlayer2,1100,0);
+		con.drawString(strPlayer2 +"'s Turn - Enter Column Number",850,23);
 		
 	}
 	public static void GameBoardNo(Console con){
+		String strPlayer1;
+		String strPlayer2;
 		int intBoard[][];
 		int intRow = 1;
-		int intColumn;
+		char charColumn;
+		con.clear();
+		TextInputFile txtName = new TextInputFile("PlayerName.txt");
 		
+		BufferedImage imgBoardScreen = con.loadImage("BlueScreen.jpg");
+		con.drawImage(imgBoardScreen, 0, 0);
 		con.repaint();
-		con.println("Player 1's Turn - Enter Column Number");
-		intColumn = con.readInt();
 		
-		intBoard = new int[intRow][intColumn];
+		con.setDrawColor(Color.WHITE);	
+		con.drawRect(0,0,500,55);
+		strPlayer1 = txtName.readLine();
+		strPlayer2 = txtName.readLine();
+		con.repaint();
+		con.drawString("Player 1: " +strPlayer1,0,0);
+		con.drawString(strPlayer1 +"'s Turn - Enter Column Number", 0,23);
+		con.drawRect(779,0,500,55);
+		con.drawString("Player 2: " +strPlayer2,782,0);
+		con.drawString(strPlayer2 +"'s Turn - Enter Column Number",782,23);
 	}
 }
