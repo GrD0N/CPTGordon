@@ -1,0 +1,14 @@
+import arc.*;
+import java.awt.image.BufferedImage;
+import java.awt.Color;
+import java.awt.Font;
+
+public class CPTGameBoard{
+	public static void main(String [] args){
+		Console con = new Console();
+		
+		
+		
+		
+	}	
+}

@@ -126,5 +126,6 @@ public class CPTGordon{
 		con.drawRect(779,0,500,55);
 		con.drawString("Player 2: " +strPlayer2,782,0);
 		con.drawString(strPlayer2 +"'s Turn - Enter Column Number",782,23);
+		
 	}
 }
