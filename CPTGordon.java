@@ -94,13 +94,15 @@ public class CPTGordon{
 		con.repaint();
 		
 		con.setDrawColor(Color.WHITE);	
-		
+		con.drawRect(0,0,500,55);
 		strPlayer1 = txtName.readLine();
 		strPlayer2 = txtName.readLine();
+		con.repaint();
 		con.drawString("Player 1: " +strPlayer1,0,0);
-		con.drawString(strPlayer1 +"'s Turn - Enter Column Number", 0,23);;
-		con.drawString("Player 2: " +strPlayer2,1100,0);
-		con.drawString(strPlayer2 +"'s Turn - Enter Column Number",850,23);
+		con.drawString(strPlayer1 +"'s Turn - Enter Column Number", 0,23);
+		con.drawRect(779,0,500,55);
+		con.drawString("Player 2: " +strPlayer2,782,0);
+		con.drawString(strPlayer2 +"'s Turn - Enter Column Number",782,23);
 		
 	}
 	public static void GameBoardNo(Console con){
@@ -115,6 +117,9 @@ public class CPTGordon{
 		BufferedImage imgBoardScreen = con.loadImage("BlueScreen.jpg");
 		con.drawImage(imgBoardScreen, 0, 0);
 		con.repaint();
+		/*BufferedImage imgBoard = con.loadImage("Board.jpg");
+		con.drawImage(imgBoard, 0, 75);
+		con.repaint(); */
 		
 		con.setDrawColor(Color.WHITE);	
 		con.drawRect(0,0,500,55);
