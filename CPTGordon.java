@@ -25,7 +25,7 @@ public class CPTGordon{
 			Player1(con);
 		}else if(charStart == 'h'){
 			con.sleep(200);
-			Player1(con);
+			HighScore(con);
 		}
 		
 	}
@@ -55,11 +55,32 @@ public class CPTGordon{
 		RecordChoice(con);
 		
 	}
-	public static void highScore(Console con){
-		String strPlayerName;
-		String strScore;
+	public static void HighScore(Console con){
+		String strPlayer;
+		int intCount = 0;
+		int intY = 300;
+		int intNum = 1;
 		
-		//TextInputFile txtLeaderboard = new TextInputFile 
+		BufferedImage imgBackScreen = con.loadImage("BlueScreen.jpg");
+		con.drawImage(imgBackScreen, 0, 0);
+		con.clear();
+		con.repaint();
+		
+		TextInputFile txtLeaderBoard = new TextInputFile("HighScore.txt"); 
+		con.repaint();
+		while(intCount != 2){
+			strPlayer = txtLeaderBoard.readLine();
+			con.setDrawColor(Color.WHITE);
+			con.drawString(intNum +". " +strPlayer, 300,intY);
+			intCount = intCount + 1;
+			intNum = intNum = 1;
+			intY = intY + 20;
+			con.sleep(200);
+		}
+		
+		
+		
+		
 	}
 	public static void RecordChoice(Console con){
 		char charRecord;
