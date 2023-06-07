@@ -7,7 +7,7 @@ public class CPTGordon{
 	public static void main(String [] args){ // Main Screen
 		Console con = new Console("CPTGordon", 1280, 720);
 		char charStart = ' ';
-		
+		con.setBackgroundColor(Color.BLUE);
 		con.setDrawColor(new Color(0,0,0));		
 		
 		BufferedImage imgStartScreen = con.loadImage("Connect4.jpg");
@@ -33,8 +33,7 @@ public class CPTGordon{
 	public static void Player1(Console con){ // Player Name Setup Screen
 		String strPlayer1 = "";
 		String strPlayer2 = "";
-		BufferedImage imgNameScreen = con.loadImage("BlueScreen.jpg");
-		con.drawImage(imgNameScreen, 0, 0);
+		con.setBackgroundColor(Color.BLUE);
 		con.repaint();
 		con.setDrawColor(Color.WHITE);	
 		TextOutputFile txtName = new TextOutputFile("PlayerName.txt",false);
@@ -43,7 +42,7 @@ public class CPTGordon{
 		con.print("Enter Player 1 Name (NO LONGER THAN 10 LETTERS): ");
 		strPlayer1 = con.readLine();
 		txtName.println(strPlayer1);
-		con.drawRect(585,25,128,28);
+		con.drawRect(585,20,128,29);
 		
 		con.print("Enter Player 2 Name (NO LONGER THAN 10 LETTERS): ");
 		strPlayer2 = con.readLine();
@@ -56,38 +55,33 @@ public class CPTGordon{
 		
 	}
 	public static void HighScore(Console con){
-		String strPlayer;
-		int intCount = 0;
-		int intY = 300;
+		String strPlayer = " ";
+		int intCount;
+		int intY = 250;
 		int intNum = 1;
 		
-		BufferedImage imgBackScreen = con.loadImage("BlueScreen.jpg");
-		con.drawImage(imgBackScreen, 0, 0);
 		con.clear();
 		con.repaint();
-		
+		con.setBackgroundColor(Color.BLUE);
+		con.drawRect(200,200, 200, 200);
+
 		TextInputFile txtLeaderBoard = new TextInputFile("HighScore.txt"); 
-		con.repaint();
-		while(intCount != 2){
+		
+		for(intCount = 0; intCount <= 10; intCount++){
 			strPlayer = txtLeaderBoard.readLine();
 			con.setDrawColor(Color.WHITE);
-			con.drawString(intNum +". " +strPlayer, 300,intY);
+			con.drawString(intNum +". " +strPlayer, 525,intY);
 			intCount = intCount + 1;
-			intNum = intNum = 1;
+			intNum = intNum + 1;
 			intY = intY + 20;
-			con.sleep(200);
-		}
-		
-		
-		
-		
+		}	
 	}
+	
 	public static void RecordChoice(Console con){
 		char charRecord;
 		con.clear();
 		
-		BufferedImage imgGameScreen = con.loadImage("BlueScreen.jpg");
-		con.drawImage(imgGameScreen, 0, 0);
+		con.setBackgroundColor(Color.BLUE);
 		con.repaint();
 		con.setDrawColor(Color.WHITE);	
 		con.drawString("Would you like to record this Game?", 445,250);
@@ -110,8 +104,7 @@ public class CPTGordon{
 		con.clear();
 		TextInputFile txtName = new TextInputFile("PlayerName.txt");
 		
-		BufferedImage imgBoardScreen = con.loadImage("BlueScreen.jpg");
-		con.drawImage(imgBoardScreen, 0, 0);
+		con.setBackgroundColor(Color.BLUE);
 		con.repaint();
 		
 		con.setDrawColor(Color.WHITE);	
@@ -135,14 +128,65 @@ public class CPTGordon{
 		con.clear();
 		TextInputFile txtName = new TextInputFile("PlayerName.txt");
 		
-		BufferedImage imgBoardScreen = con.loadImage("BlueScreen.jpg");
-		con.drawImage(imgBoardScreen, 0, 0);
+		con.setBackgroundColor(Color.BLUE);
 		con.repaint();
-		/*BufferedImage imgBoard = con.loadImage("Board.jpg");
-		con.drawImage(imgBoard, 0, 75);
-		con.repaint(); */
+		con.setDrawColor(Color.WHITE);
+		con.fillOval(250,100,85,85);
+		con.fillOval(250,200,85,85);
+		con.fillOval(250,300,85,85);
+		con.fillOval(250,400,85,85);
+		con.fillOval(250,500,85,85);
+		con.fillOval(250,600,85,85);
 		
-		con.setDrawColor(Color.WHITE);	
+		con.fillOval(350,100,85,85);
+		con.fillOval(350,200,85,85);
+		con.fillOval(350,300,85,85);
+		con.fillOval(350,400,85,85);
+		con.fillOval(350,500,85,85);
+		con.fillOval(350,600,85,85);
+		
+		con.fillOval(450,100,85,85);
+		con.fillOval(450,200,85,85);
+		con.fillOval(450,300,85,85);
+		con.fillOval(450,400,85,85);
+		con.fillOval(450,500,85,85);
+		con.fillOval(450,600,85,85);
+		
+		con.fillOval(550,100,85,85);
+		con.fillOval(550,200,85,85);
+		con.fillOval(550,300,85,85);
+		con.fillOval(550,400,85,85);
+		con.fillOval(550,500,85,85);
+		con.fillOval(550,600,85,85);		
+		
+		con.fillOval(650,100,85,85);
+		con.fillOval(650,200,85,85);
+		con.fillOval(650,300,85,85);
+		con.fillOval(650,400,85,85);
+		con.fillOval(650,500,85,85);
+		con.fillOval(650,600,85,85);		
+		
+		con.fillOval(750,100,85,85);
+		con.fillOval(750,200,85,85);
+		con.fillOval(750,300,85,85);
+		con.fillOval(750,400,85,85);
+		con.fillOval(750,500,85,85);
+		con.fillOval(750,600,85,85);
+		
+		con.fillOval(850,100,85,85);
+		con.fillOval(850,200,85,85);
+		con.fillOval(850,300,85,85);
+		con.fillOval(850,400,85,85);
+		con.fillOval(850,500,85,85);
+		con.fillOval(850,600,85,85);	
+		
+		con.fillOval(950,100,85,85);
+		con.fillOval(950,200,85,85);
+		con.fillOval(950,300,85,85);
+		con.fillOval(950,400,85,85);
+		con.fillOval(950,500,85,85);
+		con.fillOval(950,600,85,85);
+		
 		con.drawRect(0,0,500,55);
 		strPlayer1 = txtName.readLine();
 		strPlayer2 = txtName.readLine();
