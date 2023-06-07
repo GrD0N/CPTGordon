@@ -107,6 +107,66 @@ public class CPTGordon{
 		con.setBackgroundColor(Color.BLUE);
 		con.repaint();
 		
+				con.setBackgroundColor(Color.BLUE);
+		con.repaint();
+		con.setDrawColor(Color.WHITE);
+		// Column 1
+		con.fillOval(300,100,85,85);
+		con.fillOval(300,200,85,85);
+		con.fillOval(300,300,85,85);
+		con.fillOval(300,400,85,85);
+		con.fillOval(300,500,85,85);
+		con.fillOval(300,600,85,85);
+		
+		// Column 2
+		con.fillOval(400,100,85,85);
+		con.fillOval(400,200,85,85);
+		con.fillOval(400,300,85,85);
+		con.fillOval(400,400,85,85);
+		con.fillOval(400,500,85,85);
+		con.fillOval(400,600,85,85);
+		
+		// Column 3
+		con.fillOval(500,100,85,85);
+		con.fillOval(500,200,85,85);
+		con.fillOval(500,300,85,85);
+		con.fillOval(500,400,85,85);
+		con.fillOval(500,500,85,85);
+		con.fillOval(500,600,85,85);
+		
+		// Column 4
+		con.fillOval(600,100,85,85);
+		con.fillOval(600,200,85,85);
+		con.fillOval(600,300,85,85);
+		con.fillOval(600,400,85,85);
+		con.fillOval(600,500,85,85);
+		con.fillOval(600,600,85,85);		
+		
+		//Column 5
+		con.fillOval(700,100,85,85);
+		con.fillOval(700,200,85,85);
+		con.fillOval(700,300,85,85);
+		con.fillOval(700,400,85,85);
+		con.fillOval(700,500,85,85);
+		con.fillOval(700,600,85,85);		
+		
+		// Column 6
+		con.fillOval(800,100,85,85);
+		con.fillOval(800,200,85,85);
+		con.fillOval(800,300,85,85);
+		con.fillOval(800,400,85,85);
+		con.fillOval(800,500,85,85);
+		con.fillOval(800,600,85,85);
+		
+		// Column 7
+		con.fillOval(900,100,85,85);
+		con.fillOval(900,200,85,85);
+		con.fillOval(900,300,85,85);
+		con.fillOval(900,400,85,85);
+		con.fillOval(900,500,85,85);
+		con.fillOval(900,600,85,85);	
+
+		
 		con.setDrawColor(Color.WHITE);	
 		con.drawRect(0,0,500,55);
 		strPlayer1 = txtName.readLine();
@@ -126,76 +186,120 @@ public class CPTGordon{
 		int intRow = 1;
 		char charColumn;
 		con.clear();
+		int intColumn;
+		int intCount;
 		TextInputFile txtName = new TextInputFile("PlayerName.txt");
 		
 		con.setBackgroundColor(Color.BLUE);
 		con.repaint();
 		con.setDrawColor(Color.WHITE);
-		con.fillOval(250,100,85,85);
-		con.fillOval(250,200,85,85);
-		con.fillOval(250,300,85,85);
-		con.fillOval(250,400,85,85);
-		con.fillOval(250,500,85,85);
-		con.fillOval(250,600,85,85);
 		
-		con.fillOval(350,100,85,85);
-		con.fillOval(350,200,85,85);
-		con.fillOval(350,300,85,85);
-		con.fillOval(350,400,85,85);
-		con.fillOval(350,500,85,85);
-		con.fillOval(350,600,85,85);
+		// Column 1
+		con.fillOval(300,100,85,85); // Row 1
+		con.fillOval(300,200,85,85); // Row 2
+		con.fillOval(300,300,85,85); // Row 3
+		con.fillOval(300,400,85,85); // Row 4
+		con.fillOval(300,500,85,85); // Row 5
+		con.fillOval(300,600,85,85); // Row 6
 		
-		con.fillOval(450,100,85,85);
-		con.fillOval(450,200,85,85);
-		con.fillOval(450,300,85,85);
-		con.fillOval(450,400,85,85);
-		con.fillOval(450,500,85,85);
-		con.fillOval(450,600,85,85);
+		// Column 2
+		con.fillOval(400,100,85,85); // Row 1
+		con.fillOval(400,200,85,85); // Row 2
+		con.fillOval(400,300,85,85); // Row 3
+		con.fillOval(400,400,85,85); // Row 4
+		con.fillOval(400,500,85,85); // Row 5
+		con.fillOval(400,600,85,85); // Row 6
 		
-		con.fillOval(550,100,85,85);
-		con.fillOval(550,200,85,85);
-		con.fillOval(550,300,85,85);
-		con.fillOval(550,400,85,85);
-		con.fillOval(550,500,85,85);
-		con.fillOval(550,600,85,85);		
+		// Column 3
+		con.fillOval(500,100,85,85); // Row 1
+		con.fillOval(500,200,85,85); // Row 2
+		con.fillOval(500,300,85,85); // Row 3
+		con.fillOval(500,400,85,85); // Row 4
+		con.fillOval(500,500,85,85); // Row 5
+		con.fillOval(500,600,85,85); // Row 6
 		
-		con.fillOval(650,100,85,85);
-		con.fillOval(650,200,85,85);
-		con.fillOval(650,300,85,85);
-		con.fillOval(650,400,85,85);
-		con.fillOval(650,500,85,85);
-		con.fillOval(650,600,85,85);		
+		// Column 4
+		con.fillOval(600,100,85,85); // Row 1
+		con.fillOval(600,200,85,85); // Row 2
+		con.fillOval(600,300,85,85); // Row 3
+		con.fillOval(600,400,85,85); // Row 4
+		con.fillOval(600,500,85,85); // Row 5
+		con.fillOval(600,600,85,85); // Row 6
 		
-		con.fillOval(750,100,85,85);
-		con.fillOval(750,200,85,85);
-		con.fillOval(750,300,85,85);
-		con.fillOval(750,400,85,85);
-		con.fillOval(750,500,85,85);
-		con.fillOval(750,600,85,85);
+		//Column 5
+		con.fillOval(700,100,85,85); // Row 1
+		con.fillOval(700,200,85,85); // Row 2
+		con.fillOval(700,300,85,85); // Row 3
+		con.fillOval(700,400,85,85); // Row 4
+		con.fillOval(700,500,85,85); // Row 5
+		con.fillOval(700,600,85,85); // Row 6
 		
-		con.fillOval(850,100,85,85);
-		con.fillOval(850,200,85,85);
-		con.fillOval(850,300,85,85);
-		con.fillOval(850,400,85,85);
-		con.fillOval(850,500,85,85);
-		con.fillOval(850,600,85,85);	
+		// Column 6
+		con.fillOval(800,100,85,85); // Row 1
+		con.fillOval(800,200,85,85); // Row 2
+		con.fillOval(800,300,85,85); // Row 3
+		con.fillOval(800,400,85,85); // Row 4
+		con.fillOval(800,500,85,85); // Row 5
+		con.fillOval(800,600,85,85); // Row 6
 		
-		con.fillOval(950,100,85,85);
-		con.fillOval(950,200,85,85);
-		con.fillOval(950,300,85,85);
-		con.fillOval(950,400,85,85);
-		con.fillOval(950,500,85,85);
-		con.fillOval(950,600,85,85);
+		// Column 7
+		con.fillOval(900,100,85,85); // Row 1
+		con.fillOval(900,200,85,85); // Row 2
+		con.fillOval(900,300,85,85); // Row 3
+		con.fillOval(900,400,85,85); // Row 4
+		con.fillOval(900,500,85,85); // Row 5
+		con.fillOval(900,600,85,85); // Row 6
+
 		
 		con.drawRect(0,0,500,55);
 		strPlayer1 = txtName.readLine();
 		strPlayer2 = txtName.readLine();
 		con.repaint();
 		con.drawString("Player 1: " +strPlayer1,0,0);
-		con.drawString(strPlayer1 +"'s Turn - Enter Column Number", 0,23);
 		con.drawRect(779,0,500,55);
 		con.drawString("Player 2: " +strPlayer2,782,0);
-		con.drawString(strPlayer2 +"'s Turn - Enter Column Number",782,23);
+		con.drawString(strPlayer1 +"'s Turn - Enter Column Number", 0,23);
+		con.drawString(strPlayer2 +"'s Turn - Enter Column Number",782,23);		
+		
+		for(intCount = 0; intCount <= 21; intCount++){
+			charColumn = con.getChar();
+			intColumn = charColumn - 48;
+		
+			if(intColumn == 1){
+				con.repaint();
+				con.setDrawColor(Color.RED);
+				con.fillOval(300,600,85,85);
+				con.repaint();
+			}else if(intColumn == 2){
+				con.repaint();
+				con.setDrawColor(Color.RED);
+				con.fillOval(400,600,85,85);
+			}else if(intColumn == 3){
+				con.repaint();
+				con.setDrawColor(Color.RED);
+				con.fillOval(500,600,85,85);
+			}else if(intColumn == 4){
+				con.repaint();
+				con.setDrawColor(Color.RED);
+				con.fillOval(600,600,85,85);
+			}else if(intColumn == 5){
+				con.repaint();
+				con.setDrawColor(Color.RED);
+				con.fillOval(700,600,85,85);
+			}else if(intColumn == 6){
+				con.repaint();
+				con.setDrawColor(Color.RED);
+				con.fillOval(800,600,85,85);
+			}else if(intColumn == 7){
+				con.repaint();
+				con.setDrawColor(Color.RED);
+				con.fillOval(900,600,85,85);
+			}
+		}
+		con.setDrawColor(Color.WHITE);
+		con.drawRect(779,0,500,55);
+		con.drawString("Player 2: " +strPlayer2,782,0);
+		
 		
 	}
 }
