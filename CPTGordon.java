@@ -185,8 +185,10 @@ public class CPTGordon{
 		int intBoard[][];
 		int intRow = 1;
 		char charColumn;
+		char charColumnP2;
 		con.clear();
 		int intColumn;
+		int intColumnP2;
 		int intCount;
 		TextInputFile txtName = new TextInputFile("PlayerName.txt");
 		
@@ -295,6 +297,40 @@ public class CPTGordon{
 				con.setDrawColor(Color.RED);
 				con.fillOval(900,600,85,85);
 			}
+			charColumnP2 = con.getChar();
+			intColumnP2 = charColumnP2 - 48;
+			
+			if(intColumnP2 == 1){
+				con.repaint();
+				con.setDrawColor(Color.YELLOW);
+				con.fillOval(300,600,85,85);
+				con.repaint();
+			}else if(intColumnP2 == 2){
+				con.repaint();
+				con.setDrawColor(Color.YELLOW);
+				con.fillOval(400,600,85,85);
+			}else if(intColumnP2 == 3){
+				con.repaint();
+				con.setDrawColor(Color.YELLOW);
+				con.fillOval(500,600,85,85);
+			}else if(intColumnP2 == 4){
+				con.repaint();
+				con.setDrawColor(Color.YELLOW);
+				con.fillOval(600,600,85,85);
+			}else if(intColumnP2 == 5){
+				con.repaint();
+				con.setDrawColor(Color.YELLOW);
+				con.fillOval(700,600,85,85);
+			}else if(intColumnP2 == 6){
+				con.repaint();
+				con.setDrawColor(Color.YELLOW);
+				con.fillOval(800,600,85,85);
+			}else if(intColumnP2 == 7){
+				con.repaint();
+				con.setDrawColor(Color.YELLOW);
+				con.fillOval(900,600,85,85);
+			}
+			
 		}
 		con.setDrawColor(Color.WHITE);
 		con.drawRect(779,0,500,55);
