@@ -5,7 +5,7 @@ import java.awt.Font;
 
 public class CPTGordon{
 	public static void main(String [] args){ // Main Screen
-		Console con = new Console("CPTGordon", 1280, 720);
+		Console con = new Console("CPTGordon - Connect 4 Game", 1280, 720);
 		char charStart = ' ';
 		con.setBackgroundColor(Color.BLUE);
 		con.setDrawColor(new Color(0,0,0));		
@@ -15,17 +15,21 @@ public class CPTGordon{
 		
 		
 		con.drawString("(p) --> Play Game", 950, 350);
-		con.drawString("(h) --> View High Scores", 950, 400);
+		con.drawString("(l) --> View Leaderboard", 950, 400);
 		con.drawString("(r) --> View Replay", 950, 450);
+		con.drawString("(h) --> Help Screen", 950, 500);
 
 		con.repaint();
 		charStart = con.getChar();
 		if(charStart == 'p'){
 			con.sleep(200);
 			Player1(con);
+		}else if(charStart == 'l'){
+			con.sleep(200);
+			LeaderBoard(con);
 		}else if(charStart == 'h'){
 			con.sleep(200);
-			HighScore(con);
+			HelpScreen(con);
 		}
 		
 	}
@@ -54,36 +58,75 @@ public class CPTGordon{
 		RecordChoice(con);
 		
 	}
-	public static void HighScore(Console con){
+	public static void LeaderBoard(Console con){
 		String strPlayer = " ";
 		int intCount;
 		int intY = 250;
 		int intNum = 1;
-		
+		int intCounter;
+		int intCounter2;
 		con.clear();
 		con.repaint();
 		con.setBackgroundColor(Color.BLUE);
-		con.drawRect(200,200, 200, 200);
+		con.setDrawColor(Color.WHITE);
+		con.drawRect(490,250, 250, 250);
 
 		TextInputFile txtLeaderBoard = new TextInputFile("HighScore.txt"); 
 		
 		for(intCount = 0; intCount <= 10; intCount++){
 			strPlayer = txtLeaderBoard.readLine();
 			con.setDrawColor(Color.WHITE);
-			con.drawString(intNum +". " +strPlayer, 525,intY);
+			con.drawString(intNum +". " +strPlayer, 500,intY);
 			intCount = intCount + 1;
 			intNum = intNum + 1;
 			intY = intY + 20;
 		}	
 	}
 	
+	public static void HelpScreen(Console con){
+		char charHelpChoice;
+		
+		con.clear();
+		con.setBackgroundColor(Color.BLUE);
+		con.repaint();
+		con.setDrawColor(Color.WHITE);
+		
+		con.drawString("What do you need help with?", 445, 250);
+		con.drawString("(n) --> Navigation", 495, 275);
+		con.drawString("(p) --> Playing the Game", 460,300);
+		con.drawString("(g) --> Go Back", 510,325);
+		charHelpChoice = con.getChar();
+		
+		if(charHelpChoice == 'n'){
+			con.clear();
+			NavigationHelp(con);
+		}else if(charHelpChoice == 'p'){
+			con.clear();
+		}else if(charHelpChoice == 'g'){
+			con.clear();
+		}
+		
+	}
+	
+	public static void NavigationHelp(Console con){
+		char charNavigationChoice;
+		
+		con.clear();
+		con.setBackgroundColor(Color.BLUE);
+		con.repaint();
+		con.setDrawColor(Color.WHITE);
+		
+		con.drawString("To navigate throught the screens simply press the",380,275);
+		con.drawString("corresponding key to navigate to the desired screen", 380,300);
+	}
 	public static void RecordChoice(Console con){
 		char charRecord;
-		con.clear();
 		
+		con.clear();
 		con.setBackgroundColor(Color.BLUE);
 		con.repaint();
 		con.setDrawColor(Color.WHITE);	
+		
 		con.drawString("Would you like to record this Game?", 445,250);
 		con.drawString("(y) --> Yes, Record the current Game", 431, 275);
 		con.drawString("(n) --> No, don't record the current game", 420,300);

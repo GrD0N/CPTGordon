@@ -18,37 +18,10 @@ public class CPTGameBoard{
 			
 			con.println("Enter Piece Column (1-7)");
 			charAns = con.getChar();
+			intPiece = new int[5][6];
 			intColumn = charAns - 48;
-			intRow = intRow + 1;	
-			intPiece = new int[intRow][intColumn];
-			con.println("Row " +intRow +": Column: "+intColumn);
-			con.println("Enter Piece 2 Column (1-7)");
-			charAns = con.getChar();
-			intColumn2 = charAns - 48;
-			if(intColumn != intColumn2){
-				intRow = intRow - 1;
-			}else if(intColumn2 == intColumn){	
-			}
-			intPiece = new int[intRow = intRow + 1][intColumn];
-			con.println("Row " +intRow +": Column: "+intColumn);
-			
-		while(intCount != 10){
-			con.println("Enter Piece Column (1-7)");
-			charAns = con.getChar();
-			intColumn = charAns - 48;
-			intRow = intRow + 1;	
-			intPiece = new int[intRow][intColumn];
-			con.println("Row " +intRow +": Column: "+intColumn);
-			con.println("Enter Piece 2 Column (1-7)");
-			charAns = con.getChar();
-			intColumn2 = charAns - 48;
-			if(intColumn != intColumn2){
-				intRow = intRow - 1;
-			}else if(intColumn2 == intColumn){	
-			}
-			intPiece = new int[intRow = intRow + 1][intColumn];
-			con.println("Row " +intRow +": Column: "+intColumn);
-		}
+			intPiece[0][intColumn] = 1:1;
+		
 		
 	}
 }
