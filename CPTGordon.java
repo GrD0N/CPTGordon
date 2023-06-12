@@ -6,9 +6,24 @@ import java.awt.Font;
 public class CPTGordon{
 	public static void main(String [] args){ // Main Screen
 		Console con = new Console("CPTGordon - Connect 4 Game", 1280, 720);
+		
+		char charPlay = ' ';
+		
+		BufferedImage imgStart = con.loadImage("Connect4.jpg");
+		con.drawImage(imgStart, 0, 0);
+		con.setDrawColor(Color.BLACK);
+		con.drawString("Press (s) to Start", 950, 350);
+		con.repaint();
+		charPlay = con.getChar();
+		if(charPlay == 's'){
+			con.sleep(200);
+			Start(con);
+		}
+		
+	}
+	public static void Start(Console con){	
+		
 		char charStart = ' ';
-		con.setBackgroundColor(Color.BLUE);
-		con.setDrawColor(new Color(0,0,0));		
 		
 		BufferedImage imgStartScreen = con.loadImage("Connect4.jpg");
 		con.drawImage(imgStartScreen, 0, 0);
@@ -102,8 +117,10 @@ public class CPTGordon{
 			NavigationHelp(con);
 		}else if(charHelpChoice == 'p'){
 			con.clear();
+			GameHelp(con);
 		}else if(charHelpChoice == 'g'){
 			con.clear();
+			Start(con);
 		}
 		
 	}
@@ -118,6 +135,29 @@ public class CPTGordon{
 		
 		con.drawString("To navigate throught the screens simply press the",380,275);
 		con.drawString("corresponding key to navigate to the desired screen", 380,300);
+		con.drawString("Press (g) to go back", 500, 550);
+		charNavigationChoice = con.getChar();
+		if(charNavigationChoice == 'g'){
+			HelpScreen(con);
+		}
+		
+	}
+	
+	public static void GameHelp(Console con){
+		char charGameChoice;
+		
+		con.clear();
+		con.setBackgroundColor(Color.BLUE);
+		con.repaint();
+		con.setDrawColor(Color.WHITE);
+		
+		con.drawString("To play the game, simply press the column", 380, 275);
+		con.drawString("from 1-7 that you want to put the piece int", 380, 300);
+		con.drawString("Press (g) to go back", 500, 550);
+		charGameChoice = con.getChar();
+		if(charGameChoice == 'g'){
+			HelpScreen(con);
+		}
 	}
 	public static void RecordChoice(Console con){
 		char charRecord;
@@ -309,76 +349,13 @@ public class CPTGordon{
 		for(intCount = 0; intCount <= 21; intCount++){
 			charColumn = con.getChar();
 			intColumn = charColumn - 48;
-		
-			if(intColumn == 1){
-				con.repaint();
-				con.setDrawColor(Color.RED);
-				con.fillOval(300,600,85,85);
-				con.repaint();
-			}else if(intColumn == 2){
-				con.repaint();
-				con.setDrawColor(Color.RED);
-				con.fillOval(400,600,85,85);
-			}else if(intColumn == 3){
-				con.repaint();
-				con.setDrawColor(Color.RED);
-				con.fillOval(500,600,85,85);
-			}else if(intColumn == 4){
-				con.repaint();
-				con.setDrawColor(Color.RED);
-				con.fillOval(600,600,85,85);
-			}else if(intColumn == 5){
-				con.repaint();
-				con.setDrawColor(Color.RED);
-				con.fillOval(700,600,85,85);
-			}else if(intColumn == 6){
-				con.repaint();
-				con.setDrawColor(Color.RED);
-				con.fillOval(800,600,85,85);
-			}else if(intColumn == 7){
-				con.repaint();
-				con.setDrawColor(Color.RED);
-				con.fillOval(900,600,85,85);
-			}
 			charColumnP2 = con.getChar();
 			intColumnP2 = charColumnP2 - 48;
-			
-			if(intColumnP2 == 1){
-				con.repaint();
-				con.setDrawColor(Color.YELLOW);
-				con.fillOval(300,600,85,85);
-				con.repaint();
-			}else if(intColumnP2 == 2){
-				con.repaint();
-				con.setDrawColor(Color.YELLOW);
-				con.fillOval(400,600,85,85);
-			}else if(intColumnP2 == 3){
-				con.repaint();
-				con.setDrawColor(Color.YELLOW);
-				con.fillOval(500,600,85,85);
-			}else if(intColumnP2 == 4){
-				con.repaint();
-				con.setDrawColor(Color.YELLOW);
-				con.fillOval(600,600,85,85);
-			}else if(intColumnP2 == 5){
-				con.repaint();
-				con.setDrawColor(Color.YELLOW);
-				con.fillOval(700,600,85,85);
-			}else if(intColumnP2 == 6){
-				con.repaint();
-				con.setDrawColor(Color.YELLOW);
-				con.fillOval(800,600,85,85);
-			}else if(intColumnP2 == 7){
-				con.repaint();
-				con.setDrawColor(Color.YELLOW);
-				con.fillOval(900,600,85,85);
-			}
-			
-		}
+		
 		con.setDrawColor(Color.WHITE);
 		con.drawRect(779,0,500,55);
 		con.drawString("Player 2: " +strPlayer2,782,0);
-		
+		}
 		
 	}
 }

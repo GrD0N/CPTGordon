@@ -15,12 +15,13 @@ public class CPTGameBoard{
 		int intCount = 0;
 		int intPlayer;
 		int intColumnP2;
+		String strPiece;	
 			
-			con.println("Enter Piece Column (1-7)");
-			charAns = con.getChar();
-			intPiece = new int[5][6];
-			intColumn = charAns - 48;
-			intPiece[0][intColumn] = 1:1;
+		con.println("Enter Piece Column (1-7)");
+		charAns = con.getChar();
+		intPiece = new int[intRow][6];
+		intColumn = charAns - 48;
+		intPiece = 
 		
 		
 	}
