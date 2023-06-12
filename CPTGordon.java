@@ -36,6 +36,11 @@ public class CPTGordon{
 
 		con.repaint();
 		charStart = con.getChar();
+		System.out.println(charStart);
+		
+		while(charStart != 'p' && charStart != 'l' && charStart != 'h'){
+			charStart = con.getChar();
+		}
 		if(charStart == 'p'){
 			con.sleep(200);
 			Player1(con);
@@ -346,16 +351,11 @@ public class CPTGordon{
 		con.drawString(strPlayer1 +"'s Turn - Enter Column Number", 0,23);
 		con.drawString(strPlayer2 +"'s Turn - Enter Column Number",782,23);		
 		
-		for(intCount = 0; intCount <= 21; intCount++){
-			charColumn = con.getChar();
-			intColumn = charColumn - 48;
-			charColumnP2 = con.getChar();
-			intColumnP2 = charColumnP2 - 48;
-		
-		con.setDrawColor(Color.WHITE);
-		con.drawRect(779,0,500,55);
-		con.drawString("Player 2: " +strPlayer2,782,0);
-		}
-		
+		charColumn = con.getChar();
+		intColumn = charColumn;
+		intBoard = new int[intRow][intColumn];
+		con.drawString(intRow +" : " +intColumn,440, 200);
 	}
+
 }
+

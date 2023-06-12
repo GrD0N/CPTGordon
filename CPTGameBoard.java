@@ -6,7 +6,7 @@ import java.awt.Font;
 public class CPTGameBoard{
 	public static void main(String [] args){
 		Console con = new Console();
-		int intRow = 0;
+		int intRow = 1;
 		int intColumn;
 		int intColumn2 = 0;
 		int intPiece[][];
@@ -19,9 +19,10 @@ public class CPTGameBoard{
 			
 		con.println("Enter Piece Column (1-7)");
 		charAns = con.getChar();
-		intPiece = new int[intRow][6];
 		intColumn = charAns - 48;
-		intPiece = 
+		intPiece = new int[6][7];
+		con.println(intRow +" : " +intColumn);
+		
 		
 		
 	}
