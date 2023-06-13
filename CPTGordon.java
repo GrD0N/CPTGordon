@@ -15,6 +15,11 @@ public class CPTGordon{
 		con.drawString("Press (s) to Start", 950, 350);
 		con.repaint();
 		charPlay = con.getChar();
+		System.out.println(charPlay);
+		while(charPlay != 's'){
+			charPlay = con.getChar();
+			System.out.println(charPlay);
+		}
 		if(charPlay == 's'){
 			con.sleep(200);
 			Start(con);
@@ -40,6 +45,7 @@ public class CPTGordon{
 		
 		while(charStart != 'p' && charStart != 'l' && charStart != 'h'){
 			charStart = con.getChar();
+			System.out.println(charStart);
 		}
 		if(charStart == 'p'){
 			con.sleep(200);
@@ -85,6 +91,9 @@ public class CPTGordon{
 		int intNum = 1;
 		int intCounter;
 		int intCounter2;
+		int intCurrent;
+		int intBelow;
+		String strTemp;
 		con.clear();
 		con.repaint();
 		con.setBackgroundColor(Color.BLUE);
@@ -100,7 +109,28 @@ public class CPTGordon{
 			intCount = intCount + 1;
 			intNum = intNum + 1;
 			intY = intY + 20;
-		}	
+		}		
+		
+		for(intCounter2 = 0; intCounter2 < intCount -1; intCounter2++){
+			for(intCounter = 0; intCounter < intCount -1; intCounter++){
+				intCurrent = Integer.parseInt(strPlayer);
+				intBelow = Integer.parseInt(strPlayer);
+				if(intCurrent < intBelow){
+					strTemp = strPlayer;
+					strPlayer = strPlayer;
+					strPlayer = strTemp;
+					strTemp = strPlayer;
+					strPlayer = strPlayer;
+					strPlayer = strTemp;
+					strTemp = strPlayer;
+					strPlayer = strPlayer;
+					strPlayer = strTemp;
+				}
+			}
+		}
+		
+		
+
 	}
 	
 	public static void HelpScreen(Console con){
@@ -176,6 +206,10 @@ public class CPTGordon{
 		con.drawString("(y) --> Yes, Record the current Game", 431, 275);
 		con.drawString("(n) --> No, don't record the current game", 420,300);
 		charRecord = con.getChar();
+		
+		while(charRecord != 'y' && charRecord != 'n'){
+			charRecord = con.getChar();
+		}
 		if(charRecord == 'y'){
 			GameBoardYes(con);
 		}else if(charRecord == 'n'){
@@ -270,20 +304,12 @@ public class CPTGordon{
 	public static void GameBoardNo(Console con){
 		String strPlayer1;
 		String strPlayer2;
-		int intBoard[][];
-		int intRow = 1;
-		char charColumn;
-		char charColumnP2;
 		con.clear();
-		int intColumn;
-		int intColumnP2;
-		int intCount;
-		TextInputFile txtName = new TextInputFile("PlayerName.txt");
-		
+
+		TextInputFile txtName = new TextInputFile("PlayerName.txt"); // Drawing the game board
 		con.setBackgroundColor(Color.BLUE);
 		con.repaint();
 		con.setDrawColor(Color.WHITE);
-		
 		// Column 1
 		con.fillOval(300,100,85,85); // Row 1
 		con.fillOval(300,200,85,85); // Row 2
@@ -351,10 +377,20 @@ public class CPTGordon{
 		con.drawString(strPlayer1 +"'s Turn - Enter Column Number", 0,23);
 		con.drawString(strPlayer2 +"'s Turn - Enter Column Number",782,23);		
 		
+		char charColumn;
+		int intColumn;
+		int intRow = 7;
+		int intBoard[][];
+		int intCount;
+		
 		charColumn = con.getChar();
 		intColumn = charColumn;
-		intBoard = new int[intRow][intColumn];
-		con.drawString(intRow +" : " +intColumn,440, 200);
+		intBoard = new int[6][7];
+		
+		for(intCount = intRow; intCount >= 1; intCount++){ // Drops Piece to the bottom of the Board
+			intRow = intRow - 1;
+		}
+		
 	}
 
 }
