@@ -3,19 +3,16 @@ import java.awt.image.BufferedImage;
 import java.awt.Color;
 import java.awt.Font;
 
-public class CPTGameBoard{
+public class cptest{
 	public static void main(String [] args){
 		Console con = new Console();
 		int intRow = 7;
-		int intRow2 = 7;
-		// https://stackoverflow.com/questions/67991573/how-can-one-check-if-an-integer-is-equal-to-another-in-a-2d-array
+		
 		int intColumn = 0;
 		int intColumn2 = 0;
-		int intNum = 1;
 		int intPiece[][];
 		int intPiece2[][];
 		char charAns;
-		char charAns2;
 		int intCount = 0;
 		int intPlayer;
 		int intColumnP2;
@@ -82,33 +79,14 @@ public class CPTGameBoard{
 		con.println("Enter Piece Column");
 		charAns = con.getChar();
 		intColumn = charAns - 48;
-		con.println("Column: " +intColumn);
-		intColumn = intColumn - 1;
-		for(intCount = intRow; intCount >= intNum; intCount--){
+		con.println(intColumn);
+		for(intCount = intRow; intCount >= 0; intCount--){
 			con.sleep(250);
 			con.println(intRow);
 			intRow = intRow - 1;
 		}
-		intPiece2 = new int[intRow][intColumn];
-		
-		if(intRow == 0 && intColumn == 0){
-			intPiece[0][0] = 1;
-			con.println(intPiece[0][0]);
-		}else{
-			con.println("no");
-		}
-		
-		con.println("Enter a second column");
-		charAns2 = con.getChar();
-		intColumn2 = charAns2 - 48;
-		con.println("Column: " +intColumn2);
-		intColumn2 = intColumn2 - 1;
-		if(intColumn2 == intColumn){
-			intNum = intNum + 1;
-		}
-		for(intCount = intRow2; intCount >= intNum; intCount--){
-			con.println(intRow);
-		}
+		intPiece[intRow][intColumn] = 1;
+		con.println(intPiece[intRow][intColumn]);
 		
 	}
 }

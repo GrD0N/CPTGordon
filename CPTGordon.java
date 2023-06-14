@@ -102,6 +102,7 @@ public class CPTGordon{
 
 		TextInputFile txtLeaderBoard = new TextInputFile("HighScore.txt"); 
 		
+		
 		for(intCount = 0; intCount <= 10; intCount++){
 			strPlayer = txtLeaderBoard.readLine();
 			con.setDrawColor(Color.WHITE);
@@ -390,6 +391,7 @@ public class CPTGordon{
 		for(intCount = intRow; intCount >= 1; intCount++){ // Drops Piece to the bottom of the Board
 			intRow = intRow - 1;
 		}
+		
 		
 	}
 
