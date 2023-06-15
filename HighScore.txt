@@ -1,8 +1,15 @@
-Gordon - 300
-Gordo - 200
-abcd - 45
-aaa - 12
-aa - 13
-a - 2
-bg - 15
+Gordon - 
+300
+Gordo - 
+200
+abcd - 
+45
+aaa - 
+12
+aa - 
+13
+a - 
+2
+bg - 
+15
  

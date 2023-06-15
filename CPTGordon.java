@@ -85,8 +85,9 @@ public class CPTGordon{
 		
 	}
 	public static void LeaderBoard(Console con){
-		String strPlayer = " ";
+		String strPlayer[][];
 		int intCount;
+		int intRow = 0;
 		int intY = 250;
 		int intNum = 1;
 		int intCounter;
@@ -101,38 +102,43 @@ public class CPTGordon{
 		con.drawRect(490,250, 250, 250);
 
 		TextInputFile txtLeaderBoard = new TextInputFile("HighScore.txt"); 
-		
-		
+		strPlayer = new String[9][2];
+
+	public static String[][] sortHS(String strPlayer[][], int intCount){
+		String strTemp;
+		int intCurrent;
+		int intBelow;
+		int intCounter;
+		int intCounter2;
+				
 		for(intCount = 0; intCount <= 10; intCount++){
-			strPlayer = txtLeaderBoard.readLine();
+			strPlayer[intRow][0] = txtLeaderBoard.readLine();
+			strPlayer[intRow][1] = txtLeaderBoard.readLine();
 			con.setDrawColor(Color.WHITE);
-			con.drawString(intNum +". " +strPlayer, 500,intY);
-			intCount = intCount + 1;
-			intNum = intNum + 1;
-			intY = intY + 20;
-		}		
-		
-		for(intCounter2 = 0; intCounter2 < intCount -1; intCounter2++){
-			for(intCounter = 0; intCounter < intCount -1; intCounter++){
-				intCurrent = Integer.parseInt(strPlayer);
-				intBelow = Integer.parseInt(strPlayer);
-				if(intCurrent < intBelow){
-					strTemp = strPlayer;
-					strPlayer = strPlayer;
-					strPlayer = strTemp;
-					strTemp = strPlayer;
-					strPlayer = strPlayer;
-					strPlayer = strTemp;
-					strTemp = strPlayer;
-					strPlayer = strPlayer;
-					strPlayer = strTemp;
+			con.drawString(intNum +". " +strPlayer, 500,intY);		
+			for(intCounter2 = 0; intCounter2 < intCount -1; intCounter2++){
+				for(intCounter = 0; intCounter < intCount -1; intCounter++){
+					intCurrent = Integer.parseInt(strPlayer[intCounter][1]);
+					intBelow = Integer.parseInt(strPlayer[intCounter + 1][1]);
+					if(intCurrent < intBelow){
+						strTemp = strPlayer[intCounter][1];
+						strPlayer[intCounter][1] = strPlayer[intCounter + 1][1];
+						strPlayer[intCounter][1] = strTemp;
+						strTemp = strPlayer[intCounter][1];
+						strPlayer[intCounter][1] = strPlayer[intCounter + 1][1];
+						strPlayer[intCounter + 1][1] = strTemp;
+
+					}
 				}
 			}
 		}
+	}
+		
+
 		
 		
 
-	}
+	
 	
 	public static void HelpScreen(Console con){
 		char charHelpChoice;
@@ -188,7 +194,7 @@ public class CPTGordon{
 		con.setDrawColor(Color.WHITE);
 		
 		con.drawString("To play the game, simply press the column", 380, 275);
-		con.drawString("from 1-7 that you want to put the piece int", 380, 300);
+		con.drawString("from 1-7 that you want to put the piece in.", 380, 300);
 		con.drawString("Press (g) to go back", 500, 550);
 		charGameChoice = con.getChar();
 		if(charGameChoice == 'g'){
